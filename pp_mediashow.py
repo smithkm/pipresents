@@ -118,13 +118,13 @@ class MediaShow:
                         if self.player<>None:
                             self.player.key_pressed(key_name)
     
-        elif key_name in ('up','down'):
+        elif key_name in ('up','down','prior','next'):
         # if child or sub-show is running and is a show pass to show, track does not use up/down
         # otherwise use keys for next or previous
             if self.shower<>None:
                 self.shower.key_pressed(key_name)
             else:
-                if key_name=='up':
+                if key_name in ('up', 'prior'):
                     self._previous()
                 else:
                     self._next()
